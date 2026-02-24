@@ -200,7 +200,7 @@ const App = () => {
 
   const ScrapbookCover = () => (
     <div className="min-h-screen bg-[#FDF6E3] flex flex-col items-center justify-center p-4 md:p-8">
-      <div className="max-w-md w-full aspect-[3/4] bg-white rounded-xl shadow-2xl border-[16px] border-[#FFF] relative flex flex-col overflow-hidden rotate-1">
+      <div className="max-w-md w-full h-auto bg-white rounded-xl shadow-2xl border-[16px] border-[#FFF] relative flex flex-col overflow-hidden rotate-1">
         <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-32 h-8 bg-pink-200/50 -rotate-3 z-20"></div>
         <div className="absolute top-4 right-4 text-4xl">🌸</div>
         <div className="flex-grow flex flex-col items-center justify-center p-8 border-2 border-dashed border-orange-200 m-2 rounded-lg text-center">

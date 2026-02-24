@@ -5,14 +5,23 @@
 /* 引入 Google Fonts 中文字體：思源黑體與思源宋體 */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
 
-/* 全域背景設定，防止手機端出現白色邊塊，並優化文字清晰度 */
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #FDF6E3;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+@layer base {
+  :root {
+    /* 定義動態視窗高度，解決手機瀏覽器工具列遮擋問題 */
+    --vh: 1dvh;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #FDF6E3;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* 確保在手機上滾動順暢 */
+    overflow-x: hidden;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
 }
 
 /* 捲軸隱藏工具：讓手機版選單可以滑動但看起來很整潔 */
@@ -23,4 +32,10 @@ body {
 .no-scrollbar {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+/* 強制修正手機端容器過高問題 */
+.mobile-touch-fix {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
